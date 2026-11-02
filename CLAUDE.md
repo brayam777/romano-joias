@@ -68,7 +68,7 @@ Tabela `romano_products` (name, category, media, is_featured, created_at). RLS: 
 
 ## Deploy
 
-Push na `main` do GitHub → a Vercel publica em produção sozinha. Confira com `npx vercel ls romano-joias`. Em emergência, `npx vercel deploy --prod` (às vezes falha uma vez com "Not authorized" — é só repetir, ou passar `--scope brayam-s-projects`). O `.vercelignore` impede que `SUPABASE_CREDENTIALS.local`, `tests/`, `supabase/`, `CLAUDE.md`, `README.md`, `serve.cjs` e `.claude/` vão pro site.
+Push na `main` do GitHub → a Vercel publica em produção sozinha (repositório conectado com `vercel git connect` em 2026-11-02; antes disso o deploy era manual). Confira com `npx vercel ls romano-joias`. Em emergência, `npx vercel deploy --prod` (às vezes falha uma vez com "Not authorized" — é só repetir, ou passar `--scope brayam-s-projects`). O `.vercelignore` impede que `SUPABASE_CREDENTIALS.local`, `tests/`, `supabase/`, `CLAUDE.md`, `README.md`, `serve.cjs` e `.claude/` vão pro site.
 
 ## Pendências
 
