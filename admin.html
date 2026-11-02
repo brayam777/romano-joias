@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Romano Joias — Painel</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="img/logo-icon.svg" type="image/svg+xml" />
+<meta name="theme-color" content="#0b0b0b" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/admin.css" />
+</head>
+<body class="admin-body">
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand">
+      <img src="img/logo-full.svg" alt="Romano Joias — área do lojista" class="brand-logo" />
+    </a>
+    <a href="index.html" class="btn btn-outline btn-sm">Ver site</a>
+  </div>
+</header>
+
+<main class="container admin-main">
+
+  <section id="loginView" class="admin-card" hidden>
+    <h1 class="section-title admin-title">Entrar</h1>
+    <p class="admin-sub">Digite a senha do painel.</p>
+    <form id="loginForm" class="admin-form">
+      <input type="password" id="loginPassword" placeholder="Senha" required />
+      <button type="submit" class="btn btn-whatsapp">Entrar</button>
+    </form>
+    <p id="loginMessage" class="admin-message"></p>
+  </section>
+
+  <section id="panelView" class="admin-panel" hidden>
+    <div class="admin-panel-header">
+      <div>
+        <h1 class="section-title admin-title">Gerenciar catálogo</h1>
+        <p id="sessionInfo" class="admin-sub"></p>
+      </div>
+      <button id="logoutBtn" class="btn btn-outline btn-sm">Sair</button>
+    </div>
+
+    <p id="panelMessage" class="admin-message"></p>
+
+    <div class="admin-card">
+      <h2 class="admin-card-title" id="productFormTitle">Adicionar peça</h2>
+      <form id="productForm" class="admin-form product-form">
+        <input type="hidden" id="editingProductId" value="" />
+        <input type="text" id="productName" placeholder="Nome da peça" required />
+        <input type="text" id="productCategory" placeholder="Categoria (ex: Anéis)" required list="categoryOptions" />
+        <datalist id="categoryOptions"></datalist>
+        <div id="mediaPreview" class="admin-media-preview" hidden></div>
+        <input type="file" id="productMedia" accept="image/*,video/*" multiple hidden />
+        <button type="button" id="addMediaBtn" class="admin-add-media">+ Adicionar foto ou vídeo</button>
+        <p class="admin-hint">Adicione quantas fotos quiser e/ou vídeos. Toque em "Adicionar" de novo pra incluir mais — a ordem escolhida vira a ordem do carrossel no site.</p>
+        <label class="admin-checkbox">
+          <input type="checkbox" id="productFeatured" />
+          Destacar no topo da vitrine (substitui a peça em destaque atual)
+        </label>
+        <div class="product-form-actions">
+          <button type="submit" class="btn btn-whatsapp" id="productFormSubmit">Adicionar</button>
+          <button type="button" class="btn btn-outline btn-sm" id="cancelEditBtn" hidden>Cancelar edição</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="admin-card">
+      <h2 class="admin-card-title">Peças cadastradas</h2>
+      <p class="admin-sub">Toque numa peça pra editar.</p>
+      <div id="productList" class="admin-list"></div>
+    </div>
+  </section>
+
+</main>
+
+<script type="module" src="js/admin.js"></script>
+</body>
+</html>

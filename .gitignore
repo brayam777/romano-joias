@@ -1,0 +1,26 @@
+# Dependências e locais
+node_modules/
+.vercel/
+.claude/settings.local.json
+supabase/.temp/
+.DS_Store
+Thumbs.db
+
+# Segredos — nunca versionar (SUPABASE_CREDENTIALS.local tem a senha do painel)
+.env
+.env.*
+*.local
+*credentials*
+*CREDENTIALS*
+*.pem
+*.key
+*.p12
+*token*.txt
+
+# Dumps/backups de banco e de mídia
+*.dump
+*.backup
+dump*.sql
+backups/
+
+.env*

@@ -1,0 +1,10 @@
+# Nunca subir pro deploy público (ver tests/smoke.mjs, que confere os 404):
+SUPABASE_CREDENTIALS.local
+*.local
+.env*
+supabase
+serve.cjs
+tests/
+.claude/
+CLAUDE.md
+README.md

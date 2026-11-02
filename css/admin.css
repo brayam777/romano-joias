@@ -1,0 +1,278 @@
+.admin-body { background: var(--bg-soft); }
+
+.admin-main {
+  padding: 50px 24px 80px;
+  max-width: 720px;
+}
+
+.admin-title { text-align: left; margin-bottom: 6px; }
+
+.admin-sub {
+  font-family: system-ui, sans-serif;
+  color: var(--text-soft);
+  font-size: 14px;
+  margin: 0 0 20px;
+}
+
+.admin-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px;
+  margin-bottom: 24px;
+}
+
+.admin-card-title {
+  font-size: 20px;
+  color: var(--black);
+  margin: 0 0 16px;
+  font-family: 'Cinzel', serif;
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.admin-form input,
+.admin-form select {
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+  padding: 10px 14px;
+  border: 1px solid rgba(11,11,11,0.2);
+  border-radius: 8px;
+  background: var(--bg-soft);
+  color: var(--text);
+}
+
+.admin-form input:focus,
+.admin-form select:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+/* iOS Safari dá zoom automático ao focar campos com fonte < 16px. No mobile,
+   sobe os campos pra 16px pra evitar esse zoom que "quebra" o layout. */
+@media (max-width: 640px) {
+  .admin-form input,
+  .admin-form select,
+  .admin-form textarea {
+    font-size: 16px;
+  }
+}
+
+.admin-form button { align-self: flex-start; }
+
+.admin-hint {
+  font-family: system-ui, sans-serif;
+  font-size: 12px;
+  color: var(--text-soft);
+  margin: -4px 0 0;
+}
+
+.admin-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: system-ui, sans-serif;
+  font-size: 13px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.admin-checkbox input { width: auto; padding: 0; }
+
+.admin-add-media {
+  align-self: flex-start;
+  background: var(--bg-soft);
+  border: 1px dashed rgba(11, 11, 11, 0.3);
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.admin-add-media:hover {
+  border-color: var(--gold);
+  background: rgba(198, 161, 91, 0.08);
+}
+
+.admin-media-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.admin-media-thumb {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--black), var(--gold-dark));
+}
+
+.admin-media-order {
+  position: absolute;
+  bottom: 2px;
+  left: 2px;
+  min-width: 16px;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+  padding: 0 4px;
+  border-radius: 8px;
+  background: rgba(11, 11, 11, 0.75);
+  color: var(--gold-light);
+  font-family: system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.admin-media-badge {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  padding: 1px 5px;
+  border-radius: 6px;
+  background: rgba(11, 11, 11, 0.75);
+  color: var(--gold-light);
+  font-family: system-ui, sans-serif;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.admin-media-thumb img,
+.admin-media-thumb video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.admin-media-thumb-remove {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 18px;
+  height: 18px;
+  line-height: 16px;
+  text-align: center;
+  border-radius: 50%;
+  background: rgba(11, 11, 11, 0.75);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0;
+}
+
+.admin-media-thumb-remove:hover { background: #b0453f; }
+
+.admin-list-featured-tag {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 11px;
+  color: var(--gold-dark);
+  font-weight: 600;
+}
+
+.product-form-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.admin-message {
+  font-family: system-ui, sans-serif;
+  font-size: 13px;
+  color: var(--gold-dark);
+  min-height: 18px;
+}
+
+.admin-message.error { color: #b0453f; }
+
+.admin-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.admin-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.admin-list-empty {
+  font-family: system-ui, sans-serif;
+  color: var(--text-soft);
+  font-size: 14px;
+}
+
+.admin-list-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px;
+  border: 1px solid rgba(11,11,11,0.1);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.admin-list-item:hover { border-color: var(--gold); }
+
+.admin-list-thumb {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: linear-gradient(135deg, var(--black), var(--gold-dark));
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-list-thumb .icon-gem {
+  width: 55%;
+  height: 55%;
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.85);
+  stroke-width: 1.6;
+}
+
+.admin-list-info {
+  flex: 1;
+  font-family: system-ui, sans-serif;
+}
+
+.admin-list-name {
+  font-weight: 600;
+  color: var(--black);
+  font-size: 15px;
+}
+
+.admin-list-meta {
+  color: var(--text-soft);
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.admin-list-delete {
+  background: none;
+  border: none;
+  color: #b0453f;
+  cursor: pointer;
+  font-family: system-ui, sans-serif;
+  font-size: 13px;
+  padding: 6px 10px;
+}
+
+.admin-list-delete:hover { text-decoration: underline; }
